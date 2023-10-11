@@ -37,11 +37,13 @@ class ABP_GUI:
         self.visualizer_canvas.place(x=23, y=25)
 
         # One for traversal_list (maybe not)
-        self.traversal_list_canvas = tk.Canvas(self.window, width=2000, height=108, bg="light gray", relief="groove")
+        self.traversal_list_canvas = tk.Canvas(self.window, width=1980, height=108, bg="light gray", relief="groove")
         self.traversal_list_canvas.place(x=0, y=735)
 
         #Setting up scrollbar for visualizer canvas (x and y)
-        
+
+
+        # Setting up init vars
 
 # Setting it up and booting
 window = tk.Tk()
