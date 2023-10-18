@@ -28,28 +28,52 @@ def find_element():
 
 class ABP_GUI:
     # Constructor
-    def __init__(self, root_gui):
-        self.window = root_gui
+    def __init__(self, root):
+        self.window = root
 
-        # Setting up 2 canvas'
-        # One for tree visuals
-        self.visualizer_canvas = tk.Canvas(self.window, width=1290, height=520, bg="white", relief="groove", bd=4)
-        self.visualizer_canvas.place(x=23, y=25)
+        # Canvas for tree visuals
+        self.visual_canvas = tk.Canvas(self.window, width=1290, height=520, bg="white", relief="groove", bd=4, scrollregion=(0, 0, 1260, 500))
+        self.visual_canvas.place(x=23, y=25)
+        self.visual_canvas.grid(row=0, column=0, sticky="nsew")
 
-        # One for traversal_list (maybe not)
-        self.traversal_list_canvas = tk.Canvas(self.window, width=1980, height=108, bg="light gray", relief="groove")
-        self.traversal_list_canvas.place(x=0, y=735)
+        # Design choice (botton line)
+        self.below_canvas = tk.Canvas(self.window, width=1800, height=25, bg="light gray", relief="groove")
+        self.below_canvas.place(x=0, y=765)
 
-        #Setting up scrollbar for visualizer canvas (x and y)
+        # Setting up y scrollbar for visualizer canvas
+        self.vertical_scrollbar = tk.Scrollbar(self.window, command=self.visual_canvas.yview)
+        self.visual_canvas.config(yscrollcommand=self.vertical_scrollbar.set)
+        self.vertical_scrollbar.grid(row=0, column=1, sticky="ns")
+        self.visual_canvas.bind("<Configure>", self.on_config_scrollbars)
 
+        # Setting up x scrollbar for visualizer canvas
+        self.horizontal_scrollbar = tk.Scrollbar(self.window, command=self.visual_canvas.xview, orient=tk.HORIZONTAL)
+        self.visual_canvas.config(xscrollcommand=self.horizontal_scrollbar.set)
+        self.horizontal_scrollbar.grid(row=1, column=0, sticky="ew")
+        self.visual_canvas.bind("<Configure>", self.on_config_scrollbars)
 
         # Setting up init vars
 
-# Setting it up and booting
-window = tk.Tk()
-window.title("Árvore Binária de Pesquisa")
-window.geometry("1350x780")
-window.config(bg="#bdc3c7")
+        self.do_testing_stuff()
 
-ABP_GUI(window)
-window.mainloop()
+
+    '''Utility Funcs'''
+    # Updates scrollbars based on canvas
+    def on_config_scrollbars(self, event):
+        self.visual_canvas.configure(scrollregion=self.visual_canvas.bbox("all"))
+
+    # Generic Testing func
+    def do_testing_stuff(self):
+        for i in range(1, 3000):
+            self.visual_canvas.create_text(i * 20, 50, text=f"Item {i}", font=("Helvetica", 12))
+            self.visual_canvas.create_text(150, i * 20, text=f"Item {i}", font=("Helvetica", 12))
+
+
+# Setting it up and booting
+root = tk.Tk()
+root.title("Árvore Binária de Pesquisa")
+root.geometry("1350x780")
+root.config(bg="#bdc3c7")
+
+ABP_GUI(root)
+root.mainloop()
