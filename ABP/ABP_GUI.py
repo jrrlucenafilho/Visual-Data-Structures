@@ -177,7 +177,7 @@ class ABP_GUI:
         self.chosen_input_option = option
 
         self.disable_input_buttons()
-        self.input_label = tk.Label(self.window, text="Insira um valor inteiro", fg="black", bg=self.color_gray, font=("Arial", 10, "bold"))
+        self.input_label = tk.Label(self.window, text="Insira um valor inteiro:", fg="black", bg=self.color_gray, font=("Arial", 10, "bold"))
         self.input_label.place(x=725+30, y=610)
 
         self.input_entry = tk.Entry(self.window, fg=self.color_blue, bg="white", relief="sunken", bd=4, width=20, font=("Arial", 10, "bold"))
