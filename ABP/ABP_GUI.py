@@ -935,7 +935,7 @@ class ABP_GUI:
 #Setting it up and booting
 root = tk.Tk()
 root.title("Árvore Binária de Pesquisa")
-root.geometry("1350x780")
+root.geometry("1250x780")
 root.config(bg="#bdc3c7")
 
 ABP_GUI(root)
