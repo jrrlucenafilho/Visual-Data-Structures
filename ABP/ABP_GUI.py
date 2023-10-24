@@ -196,14 +196,14 @@ class ABP_GUI:
 
         elif option == 2:
             #Delete Case
-            self.input_label['text'] = "Insira o valor a ser removido"
+            self.input_label['text'] = "Insira o valor a ser removido:"
             self.confirm_add_button['text'] = "Remover"
             self.window.unbind('<Return>')
             self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
             self.window.bind('<space>', lambda e: self.filter_input_value(e, option))
         else:
             #Search element case (And clearing)
-            self.input_label['text'] = "Insira o valor a ser pesquisado"
+            self.input_label['text'] = "Insira o valor a ser pesquisado:"
             self.confirm_add_button['text'] = "Pesquisar"
             self.window.unbind('<Return>')
             self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
