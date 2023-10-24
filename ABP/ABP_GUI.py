@@ -180,11 +180,11 @@ class ABP_GUI:
         self.input_label = tk.Label(self.window, text="Insira um valor inteiro", fg="black", bg=self.color_gray, font=("Arial", 10, "bold"))
         self.input_label.place(x=725+30, y=610)
 
-        self.input_entry = tk.Entry(self.window, fg=self.color_blue, bg="white", relief="sunken", bd=8, width=20, font=("Arial", 10, "bold"))
+        self.input_entry = tk.Entry(self.window, fg=self.color_blue, bg="white", relief="sunken", bd=4, width=20, font=("Arial", 10, "bold"))
         self.input_entry.place(x=725+30, y=635)
         self.input_entry.focus()
 
-        self.confirm_add_button = tk.Button(self.window, text="Insira", fg="white", bg=self.color_blue, relief="raised", bd=8, width=10, font=("Arial", 8, "bold"), state="normal")
+        self.confirm_add_button = tk.Button(self.window, text="Insira", fg="white", bg=self.color_blue, relief="raised", bd=4, width=10, font=("Arial", 8, "bold"), state="normal")
         self.confirm_add_button.place(x=600+30, y=635)
 
         if option == 1:
@@ -530,7 +530,7 @@ class ABP_GUI:
             self.tree_canvas.itemconfig(control_node[0], fill="red", outline="black")
             self.display_counter_box += 1
             self.value_printer[self.display_counter_box].config(text=control_node[2])
-            control_node[1].config(bg="red",fg="black")
+            control_node[1].config(bg="red",fg="white")
             self.window.update()
             sleep(0.8)
             self.window.update()
@@ -547,7 +547,7 @@ class ABP_GUI:
             self.tree_canvas.itemconfig(control_node[0], fill="green", outline="black")
             self.display_counter_box += 1
             self.value_printer[self.display_counter_box].config(text=control_node[2])
-            control_node[1].config(bg="green", fg="black")
+            control_node[1].config(bg="green", fg="white")
             self.window.update()
             sleep(0.8)
             self.window.update()
