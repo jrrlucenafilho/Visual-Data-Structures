@@ -17,10 +17,8 @@ def Abrir_arquivo(file_name):
 def Abrir_arquivo1():
     Abrir_arquivo("LSQ/LSQ_GUI.py")
 
-
 def Abrir_arquivo2():
     Abrir_arquivo("LSE/LSE_GUI.py")
-
 
 def Abrir_arquivo3():
     Abrir_arquivo("LDE/DoublyLinkedList_GUI.py")
