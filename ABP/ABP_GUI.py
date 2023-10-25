@@ -191,22 +191,22 @@ class ABP_GUI:
             #Insert case
             self.confirm_add_button['text'] = "Inserir"
             self.window.unbind('<space>')
-            self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
-            self.window.bind('<Return>', lambda e: self.filter_input_value(e,option))
+            self.confirm_add_button['command'] = lambda: self.filter_input_value(False, option)
+            self.window.bind('<Return>', lambda e: self.filter_input_value(e, option))
 
         elif option == 2:
             #Delete Case
             self.input_label['text'] = "Insira o valor a ser removido:"
             self.confirm_add_button['text'] = "Remover"
             self.window.unbind('<Return>')
-            self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
+            self.confirm_add_button['command'] = lambda: self.filter_input_value(False, option)
             self.window.bind('<space>', lambda e: self.filter_input_value(e, option))
         else:
             #Search element case (And clearing)
             self.input_label['text'] = "Insira o valor a ser pesquisado:"
             self.confirm_add_button['text'] = "Pesquisar"
             self.window.unbind('<Return>')
-            self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
+            self.confirm_add_button['command'] = lambda: self.filter_input_value(False, option)
             self.window.bind('<space>', lambda e: self.filter_input_value(e, option))
 
     #Warnings and such (for the 3 non-labelframe buttons)
@@ -717,13 +717,13 @@ class ABP_GUI:
                 p_temp[5] = None
         else:
             temp1 = None
-            p_temp=node
+            p_temp = node
             while True:
-                p_temp[2]=temp[2]
+                p_temp[2] = temp[2]
                 p_temp[1].config(text=temp[2])
                 if temp[6]:
-                    p_temp=temp
-                    temp=temp[6]
+                    p_temp = temp
+                    temp = temp[6]
                     if temp[5]:
                         temp1 = temp[5]
                         temp[5] = None
