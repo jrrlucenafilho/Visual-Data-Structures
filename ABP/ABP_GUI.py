@@ -79,7 +79,7 @@ class ABP_GUI:
 
         #Calc arrow positions
         root_arrow = (595, 80+50, 595 - 15,(80 + 43) / 2+50, 595 - 5, (80 + 43) / 2+50, 595 - 5, 43+50, 595 + 5, 43+50, 595 + 5, (80 + 43) / 2+50, 595 + 15, (80 + 43) / 2+50)
-        self.tree_canvas.create_polygon(root_arrow,  width=3, fill=self.color_blue, outline="black")
+        self.tree_canvas.create_polygon(root_arrow, width=3, fill=self.color_blue, outline="black")
 
         #Null word
         self.null_word_label = tk.Label(self.tree_canvas, text="NULL", font=("Arial",17,"bold","italic"), fg="#2E37FE", bg="white")
@@ -191,7 +191,7 @@ class ABP_GUI:
             #Insert case
             self.confirm_add_button['text'] = "Inserir"
             self.window.unbind('<space>')
-            self.confirm_add_button['command'] =  lambda: self.filter_input_value(False,option)
+            self.confirm_add_button['command'] = lambda: self.filter_input_value(False,option)
             self.window.bind('<Return>', lambda e: self.filter_input_value(e,option))
 
         elif option == 2:
@@ -309,7 +309,7 @@ class ABP_GUI:
                 self.node_number_label.place_forget()
                 self.reset_and_store()
         except:
-            print("Error on line 303")
+            print("Erro line 303")
 
     #Connecty current node to parent with an arrow
     def build_arrow(self):
