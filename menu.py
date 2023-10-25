@@ -13,7 +13,7 @@ def Abrir_arquivo(file_name):
     os.system(f"python {file_name}")
 
 
-#funcções para os botôes
+#funções para os botôes
 def Abrir_arquivo1():
     Abrir_arquivo("LSQ/LSQ_GUI.py")
 
