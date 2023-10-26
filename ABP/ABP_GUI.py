@@ -698,8 +698,8 @@ class ABP_GUI:
         left_side_existence_checking_of_one_side_down_label_node = 0
         while temp[5]:
             left_side_existence_checking_of_one_side_down_label_node = 1
-            p_temp=temp
-            temp=temp[5]
+            p_temp = temp
+            temp = temp[5]
 
         if(self.chosen_input_option == 2):
             self.color_indicator_to_delete(node=node, temp=temp)
@@ -712,7 +712,7 @@ class ABP_GUI:
                 temp[1].config(text=temp[6][2])
                 p_temp=temp
                 temp=temp[6]
-                p_temp[6]=None
+                p_temp[6] = None
             else:
                 p_temp[5] = None
         else:
@@ -780,9 +780,9 @@ class ABP_GUI:
             if temp[5]:
                 temp[2] = temp[5][2]
                 temp[1].config(text=temp[5][2])
-                p_temp=temp
-                temp=temp[5]
-                p_temp[5]=None
+                p_temp = temp
+                temp = temp[5]
+                p_temp[5] = None
             else:
                 p_temp[6] = None
 
